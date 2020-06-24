@@ -10,8 +10,6 @@
 <rdf:RDF xmlns="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:cqlf="&cqlf;" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative">
     <owl:Ontology rdf:about="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative"/>
     
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -20,14 +18,8 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- &cqlf;searchNeed -->
-
     <owl:AnnotationProperty rdf:about="&cqlf;searchNeed"/>
     
-
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -37,16 +29,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- &cqlf;CQL -->
-
     <owl:Class rdf:about="&cqlf;CQL"/>
-    
-
-
-    <!-- &cqlf;Annotation -->
 
     <owl:Class rdf:about="&cqlf;Annotation">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
@@ -62,25 +45,13 @@
         <rdfs:label>Annotation</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Complex -->
-
     <owl:Class rdf:about="&cqlf;Complex">
         <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
     </owl:Class>
-    
-
-
-    <!-- &cqlf;Concurrent -->
 
     <owl:Class rdf:about="&cqlf;Concurrent">
         <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
     </owl:Class>
-    
-
-
-    <!-- &cqlf;ConstraintCombination -->
 
     <owl:Class rdf:about="&cqlf;ConstraintCombination">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
@@ -103,10 +74,6 @@
         <rdfs:label>ConstraintCombination</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Containment -->
-
     <owl:Class rdf:about="&cqlf;Containment">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -121,27 +88,15 @@
         <rdfs:label>Containment</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Dependency -->
-
     <owl:Class rdf:about="&cqlf;Dependency">
         <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;ExpressivePower -->
-
     <owl:Class rdf:about="&cqlf;ExpressivePower">
         <rdfs:comment>Abstract root concept</rdfs:comment>
     </owl:Class>
     
-
-
-    <!-- &cqlf;ExternalResource -->
-
     <owl:Class rdf:about="&cqlf;ExternalResource">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -162,26 +117,14 @@
         <rdfs:label>ExternalResource</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Frame -->
-
     <owl:Class rdf:about="&cqlf;Frame">
         <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Functionality -->
-
     <owl:Class rdf:about="&cqlf;Functionality">
         <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;FuzzySearch -->
-
     <owl:Class rdf:about="&cqlf;FuzzySearch">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -197,10 +140,6 @@
         <rdfs:label>FuzzySearch</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;GraphRelation -->
-
     <owl:Class rdf:about="&cqlf;GraphRelation">
         <rdfs:subClassOf rdf:resource="&cqlf;Dependency"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
@@ -208,35 +147,19 @@
         <rdfs:label>GraphRelation</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Hierarchical -->
-
     <owl:Class rdf:about="&cqlf;Hierarchical">
         <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Level -->
-
     <owl:Class rdf:about="&cqlf;Level">
         <rdfs:subClassOf rdf:resource="&cqlf;Metamodel"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Linear -->
-
     <owl:Class rdf:about="&cqlf;Linear">
         <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;LinearRelation -->
-
     <owl:Class rdf:about="&cqlf;LinearRelation">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -252,10 +175,6 @@
         <rdfs:label>LinearRelation</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;MatchingStrategy -->
-
     <owl:Class rdf:about="&cqlf;MatchingStrategy">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -277,10 +196,6 @@
         <rdfs:label>MatchingStrategy</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Metainformation -->
-
     <owl:Class rdf:about="&cqlf;Metainformation">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -302,42 +217,22 @@
         <rdfs:label>Metainformation</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Metamodel -->
-
     <owl:Class rdf:about="&cqlf;Metamodel"/>
     
-
-
-    <!-- &cqlf;Module -->
-
     <owl:Class rdf:about="&cqlf;Module">
         <rdfs:subClassOf rdf:resource="&cqlf;Metamodel"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Overlapping -->
-
     <owl:Class rdf:about="&cqlf;Overlapping">
         <rdfs:subClassOf rdf:resource="&cqlf;Concurrent"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Paradigmatic -->
-
     <owl:Class rdf:about="&cqlf;Paradigmatic">
         <rdfs:subClassOf rdf:resource="&cqlf;Concurrent"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;PartialMatch -->
-
     <owl:Class rdf:about="&cqlf;PartialMatch">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -353,19 +248,11 @@
         <rdfs:label>PartialMatch</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;PlainText -->
-
     <owl:Class rdf:about="&cqlf;PlainText">
         <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;PlainTextSearch -->
-
     <owl:Class rdf:about="&cqlf;PlainTextSearch">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf rdf:resource="&cqlf;PlainText"/>
@@ -373,10 +260,6 @@
         <rdfs:label>PlainTextSearch</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Position -->
-
     <owl:Class rdf:about="&cqlf;Position">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -395,10 +278,6 @@
         <rdfs:label>Position</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Quantification -->
-
     <owl:Class rdf:about="&cqlf;Quantification">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -420,10 +299,6 @@
         <rdfs:label>Quantification</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Repetition -->
-
     <owl:Class rdf:about="&cqlf;Repetition">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -438,19 +313,11 @@
         <rdfs:label>Repetition</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Segmentation -->
-
     <owl:Class rdf:about="&cqlf;Segmentation">
         <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Sensitivity -->
-
     <owl:Class rdf:about="&cqlf;Sensitivity">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -466,19 +333,11 @@
         <rdfs:label>Sensitivity</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;SimpleAnnotation -->
-
     <owl:Class rdf:about="&cqlf;SimpleAnnotation">
         <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;Size -->
-
     <owl:Class rdf:about="&cqlf;Size">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf>
@@ -496,19 +355,11 @@
         <rdfs:label>Size</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;SpanContainment -->
-
     <owl:Class rdf:about="&cqlf;SpanContainment">
         <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
     </owl:Class>
     
-
-
-    <!-- &cqlf;TreeRelation -->
-
     <owl:Class rdf:about="&cqlf;TreeRelation">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Hierarchical"/>
@@ -517,11 +368,8 @@
         <rdfs:label>TreeRelation</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &cqlf;UseCase -->
-
     <owl:Class rdf:about="&cqlf;UseCase">
         <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
     </owl:Class>
+
 </rdf:RDF>
