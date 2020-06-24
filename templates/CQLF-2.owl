@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY cqlf "http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+]>
+<rdf:RDF xmlns="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:cqlf="&cqlf;" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &cqlf;searchNeed -->
+
+    <owl:AnnotationProperty rdf:about="&cqlf;searchNeed"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &cqlf;CQL -->
+
+    <owl:Class rdf:about="&cqlf;CQL"/>
+    
+
+
+    <!-- &cqlf;Annotation -->
+
+    <owl:Class rdf:about="&cqlf;Annotation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>find individual objects based on their linguistic annotation</searchNeed>
+        <rdfs:label>Annotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Complex -->
+
+    <owl:Class rdf:about="&cqlf;Complex">
+        <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Concurrent -->
+
+    <owl:Class rdf:about="&cqlf;Concurrent">
+        <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;ConstraintCombination -->
+
+    <owl:Class rdf:about="&cqlf;ConstraintCombination">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>Boolean operators for combining constraints on objects</searchNeed>
+        <rdfs:comment>conjunction (&amp;), disjunction ( | ), negation (!, !=), difference (-)</rdfs:comment>
+        <rdfs:label>ConstraintCombination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Containment -->
+
+    <owl:Class rdf:about="&cqlf;Containment">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>containment of an object in a specific context</searchNeed>
+        <rdfs:label>Containment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Dependency -->
+
+    <owl:Class rdf:about="&cqlf;Dependency">
+        <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;ExpressivePower -->
+
+    <owl:Class rdf:about="&cqlf;ExpressivePower">
+        <rdfs:comment>Abstract root concept</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;ExternalResource -->
+
+    <owl:Class rdf:about="&cqlf;ExternalResource">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>reference to externally encoded structured data</searchNeed>
+        <rdfs:label>ExternalResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Frame -->
+
+    <owl:Class rdf:about="&cqlf;Frame">
+        <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Functionality -->
+
+    <owl:Class rdf:about="&cqlf;Functionality">
+        <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;FuzzySearch -->
+
+    <owl:Class rdf:about="&cqlf;FuzzySearch">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>approximate string matching</searchNeed>
+        <rdfs:label>FuzzySearch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;GraphRelation -->
+
+    <owl:Class rdf:about="&cqlf;GraphRelation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Dependency"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <searchNeed>relationships of objects as nodes linked by directed arcs</searchNeed>
+        <rdfs:label>GraphRelation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Hierarchical -->
+
+    <owl:Class rdf:about="&cqlf;Hierarchical">
+        <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Level -->
+
+    <owl:Class rdf:about="&cqlf;Level">
+        <rdfs:subClassOf rdf:resource="&cqlf;Metamodel"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Linear -->
+
+    <owl:Class rdf:about="&cqlf;Linear">
+        <rdfs:subClassOf rdf:resource="&cqlf;Level"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;LinearRelation -->
+
+    <owl:Class rdf:about="&cqlf;LinearRelation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>horizontal relationships of objects</searchNeed>
+        <rdfs:comment>precedence/co-occurrence of objects</rdfs:comment>
+        <rdfs:label>LinearRelation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;MatchingStrategy -->
+
+    <owl:Class rdf:about="&cqlf;MatchingStrategy">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>define specific matching modality</searchNeed>
+        <rdfs:comment>match the first object in a sequence, match the whole span between tw objects, greedy vs. non-greedy search</rdfs:comment>
+        <rdfs:label>MatchingStrategy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Metainformation -->
+
+    <owl:Class rdf:about="&cqlf;Metainformation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>query metainformation associated with the primary data</searchNeed>
+        <rdfs:comment>text genre, publication date, author sex</rdfs:comment>
+        <rdfs:label>Metainformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Metamodel -->
+
+    <owl:Class rdf:about="&cqlf;Metamodel"/>
+    
+
+
+    <!-- &cqlf;Module -->
+
+    <owl:Class rdf:about="&cqlf;Module">
+        <rdfs:subClassOf rdf:resource="&cqlf;Metamodel"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Overlapping -->
+
+    <owl:Class rdf:about="&cqlf;Overlapping">
+        <rdfs:subClassOf rdf:resource="&cqlf;Concurrent"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Paradigmatic -->
+
+    <owl:Class rdf:about="&cqlf;Paradigmatic">
+        <rdfs:subClassOf rdf:resource="&cqlf;Concurrent"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;PartialMatch -->
+
+    <owl:Class rdf:about="&cqlf;PartialMatch">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>match plain text or linguistic annotation value against a generalised pattern</searchNeed>
+        <rdfs:comment>prefix/suffix search, match against regular expression</rdfs:comment>
+        <rdfs:label>PartialMatch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;PlainText -->
+
+    <owl:Class rdf:about="&cqlf;PlainText">
+        <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;PlainTextSearch -->
+
+    <owl:Class rdf:about="&cqlf;PlainTextSearch">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;PlainText"/>
+        <searchNeed>find segmentation-independent strings</searchNeed>
+        <rdfs:label>PlainTextSearch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Position -->
+
+    <owl:Class rdf:about="&cqlf;Position">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>relative position of an object with respect to another</searchNeed>
+        <rdfs:comment>containment at left, distance between two objects</rdfs:comment>
+        <rdfs:label>Position</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Quantification -->
+
+    <owl:Class rdf:about="&cqlf;Quantification">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;Overlapping"/>
+                    <rdf:Description rdf:about="&cqlf;Paradigmatic"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                    <rdf:Description rdf:about="&cqlf;SimpleAnnotation"/>
+                    <rdf:Description rdf:about="&cqlf;SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>numeric range specification on a constraint</searchNeed>
+        <rdfs:comment>at least N, at most M</rdfs:comment>
+        <rdfs:label>Quantification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Repetition -->
+
+    <owl:Class rdf:about="&cqlf;Repetition">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>multiple occurrence of an object</searchNeed>
+        <rdfs:label>Repetition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Segmentation -->
+
+    <owl:Class rdf:about="&cqlf;Segmentation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Sensitivity -->
+
+    <owl:Class rdf:about="&cqlf;Sensitivity">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Annotation"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>treatment of special character features</searchNeed>
+        <rdfs:comment>case-insensitive, ignore diacritics</rdfs:comment>
+        <rdfs:label>Sensitivity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;SimpleAnnotation -->
+
+    <owl:Class rdf:about="&cqlf;SimpleAnnotation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Linear"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;Size -->
+
+    <owl:Class rdf:about="&cqlf;Size">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&cqlf;Dependency"/>
+                    <rdf:Description rdf:about="&cqlf;Hierarchical"/>
+                    <rdf:Description rdf:about="&cqlf;PlainText"/>
+                    <rdf:Description rdf:about="&cqlf;Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <searchNeed>specify the size of an object</searchNeed>
+        <rdfs:comment>string length, number of objects in sequence, arity of tree branch or graph vertex</rdfs:comment>
+        <rdfs:label>Size</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;SpanContainment -->
+
+    <owl:Class rdf:about="&cqlf;SpanContainment">
+        <rdfs:subClassOf rdf:resource="&cqlf;Complex"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Module"/>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;TreeRelation -->
+
+    <owl:Class rdf:about="&cqlf;TreeRelation">
+        <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
+        <rdfs:subClassOf rdf:resource="&cqlf;Hierarchical"/>
+        <searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</searchNeed>
+        <rdfs:comment>domination of an object by another, common parent node</rdfs:comment>
+        <rdfs:label>TreeRelation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &cqlf;UseCase -->
+
+    <owl:Class rdf:about="&cqlf;UseCase">
+        <rdfs:subClassOf rdf:resource="&cqlf;ExpressivePower"/>
+    </owl:Class>
+</rdf:RDF>
