@@ -4,11 +4,11 @@
 	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
 	<!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
 	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-	<!ENTITY cqlf "http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative#" >
+	<!ENTITY cqlf "https://www.clarin.eu/standards/cqlf/#" >
 	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
 ]>
-<rdf:RDF xmlns="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:cqlf="&cqlf;" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/olegh/ontologies/2020/5/CQLF_Normative"/>
+<rdf:RDF xmlns="&cqlf;" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:cqlf="&cqlf;" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="https://www.clarin.eu/standards/cqlf/">
+    <owl:Ontology rdf:about="&cqlf;"/>
     
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +41,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>find individual objects based on their linguistic annotation</searchNeed>
+        <cqlf:searchNeed>find individual objects based on their linguistic annotation</cqlf:searchNeed>
         <rdfs:label>Annotation</rdfs:label>
     </owl:Class>
     
@@ -69,7 +69,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>Boolean operators for combining constraints on objects</searchNeed>
+        <cqlf:searchNeed>Boolean operators for combining constraints on objects</cqlf:searchNeed>
         <rdfs:comment>conjunction (&amp;), disjunction ( | ), negation (!, !=), difference (-)</rdfs:comment>
         <rdfs:label>ConstraintCombination</rdfs:label>
     </owl:Class>
@@ -84,7 +84,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>containment of an object in a specific context</searchNeed>
+        <cqlf:searchNeed>containment of an object in a specific context</cqlf:searchNeed>
         <rdfs:label>Containment</rdfs:label>
     </owl:Class>
     
@@ -113,7 +113,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>reference to externally encoded structured data</searchNeed>
+        <cqlf:searchNeed>reference to externally encoded structured data</cqlf:searchNeed>
         <rdfs:label>ExternalResource</rdfs:label>
     </owl:Class>
     
@@ -136,14 +136,14 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>approximate string matching</searchNeed>
+        <cqlf:searchNeed>approximate string matching</cqlf:searchNeed>
         <rdfs:label>FuzzySearch</rdfs:label>
     </owl:Class>
     
     <owl:Class rdf:about="&cqlf;GraphRelation">
         <rdfs:subClassOf rdf:resource="&cqlf;Dependency"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
-        <searchNeed>relationships of objects as nodes linked by directed arcs</searchNeed>
+        <cqlf:searchNeed>relationships of objects as nodes linked by directed arcs</cqlf:searchNeed>
         <rdfs:label>GraphRelation</rdfs:label>
     </owl:Class>
     
@@ -170,7 +170,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>horizontal relationships of objects</searchNeed>
+        <cqlf:searchNeed>horizontal relationships of objects</cqlf:searchNeed>
         <rdfs:comment>precedence/co-occurrence of objects</rdfs:comment>
         <rdfs:label>LinearRelation</rdfs:label>
     </owl:Class>
@@ -191,7 +191,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>define specific matching modality</searchNeed>
+        <cqlf:searchNeed>define specific matching modality</cqlf:searchNeed>
         <rdfs:comment>match the first object in a sequence, match the whole span between tw objects, greedy vs. non-greedy search</rdfs:comment>
         <rdfs:label>MatchingStrategy</rdfs:label>
     </owl:Class>
@@ -212,7 +212,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>query metainformation associated with the primary data</searchNeed>
+        <cqlf:searchNeed>query metainformation associated with the primary data</cqlf:searchNeed>
         <rdfs:comment>text genre, publication date, author sex</rdfs:comment>
         <rdfs:label>Metainformation</rdfs:label>
     </owl:Class>
@@ -243,7 +243,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>match plain text or linguistic annotation value against a generalised pattern</searchNeed>
+        <cqlf:searchNeed>match plain text or linguistic annotation value against a generalised pattern</cqlf:searchNeed>
         <rdfs:comment>prefix/suffix search, match against regular expression</rdfs:comment>
         <rdfs:label>PartialMatch</rdfs:label>
     </owl:Class>
@@ -256,7 +256,7 @@
     <owl:Class rdf:about="&cqlf;PlainTextSearch">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf rdf:resource="&cqlf;PlainText"/>
-        <searchNeed>find segmentation-independent strings</searchNeed>
+        <cqlf:searchNeed>find segmentation-independent strings</cqlf:searchNeed>
         <rdfs:label>PlainTextSearch</rdfs:label>
     </owl:Class>
     
@@ -273,7 +273,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>relative position of an object with respect to another</searchNeed>
+        <cqlf:searchNeed>relative position of an object with respect to another</cqlf:searchNeed>
         <rdfs:comment>containment at left, distance between two objects</rdfs:comment>
         <rdfs:label>Position</rdfs:label>
     </owl:Class>
@@ -294,7 +294,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>numeric range specification on a constraint</searchNeed>
+        <cqlf:searchNeed>numeric range specification on a constraint</cqlf:searchNeed>
         <rdfs:comment>at least N, at most M</rdfs:comment>
         <rdfs:label>Quantification</rdfs:label>
     </owl:Class>
@@ -309,7 +309,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>multiple occurrence of an object</searchNeed>
+        <cqlf:searchNeed>multiple occurrence of an object</cqlf:searchNeed>
         <rdfs:label>Repetition</rdfs:label>
     </owl:Class>
     
@@ -328,7 +328,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>treatment of special character features</searchNeed>
+        <cqlf:searchNeed>treatment of special character features</cqlf:searchNeed>
         <rdfs:comment>case-insensitive, ignore diacritics</rdfs:comment>
         <rdfs:label>Sensitivity</rdfs:label>
     </owl:Class>
@@ -350,7 +350,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <searchNeed>specify the size of an object</searchNeed>
+        <cqlf:searchNeed>specify the size of an object</cqlf:searchNeed>
         <rdfs:comment>string length, number of objects in sequence, arity of tree branch or graph vertex</rdfs:comment>
         <rdfs:label>Size</rdfs:label>
     </owl:Class>
@@ -363,7 +363,7 @@
     <owl:Class rdf:about="&cqlf;TreeRelation">
         <rdfs:subClassOf rdf:resource="&cqlf;Functionality"/>
         <rdfs:subClassOf rdf:resource="&cqlf;Hierarchical"/>
-        <searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</searchNeed>
+        <cqlf:searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</cqlf:searchNeed>
         <rdfs:comment>domination of an object by another, common parent node</rdfs:comment>
         <rdfs:label>TreeRelation</rdfs:label>
     </owl:Class>
