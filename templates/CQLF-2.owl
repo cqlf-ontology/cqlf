@@ -8,12 +8,8 @@
      xmlns:cqlf="https://www.clarin.eu/standards/cqlf#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://www.clarin.eu/standards/cqlf">
-        <rdfs:comment>### Prototype ontology including only functionalities
-
-- normative part of ISO/CD 24623-2
-- Baseline for more fine-grained concept development</rdfs:comment>
+        <rdfs:comment>RDF/XML serialization of the normative part of ISO/DIS 24623-2.</rdfs:comment>
     </owl:Ontology>
-    
 
 
     <!-- 
@@ -24,25 +20,21 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#example -->
 
     <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#example"/>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#parameters -->
 
     <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#parameters"/>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#searchNeed -->
 
     <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#searchNeed"/>
-    
 
 
     <!-- 
@@ -53,7 +45,6 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
 
 
     <!-- http://www.w3.org/2002/07/owl#Thing -->
@@ -65,7 +56,6 @@
         <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
         <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#UseCase"/>
     </rdf:Description>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Annotation -->
@@ -81,15 +71,13 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:label>Annotation</rdfs:label>
-        <searchNeed>find individual objects based on their linguistic annotation</searchNeed>
+        <cqlf:searchNeed>find individual objects based on their linguistic annotation</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#CQL -->
 
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#CQL"/>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Complex -->
@@ -97,7 +85,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Complex">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Concurrent -->
@@ -105,7 +92,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Concurrent">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#ConstraintCombination -->
@@ -128,9 +114,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>conjunction (&amp;), disjunction ( | ), negation (!, !=), difference (-)</rdfs:comment>
         <rdfs:label>ConstraintCombination</rdfs:label>
-        <searchNeed>Boolean operators for combining constraints on objects</searchNeed>
+        <cqlf:searchNeed>Boolean operators for combining constraints on objects</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Containment -->
@@ -146,9 +131,8 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:label>Containment</rdfs:label>
-        <searchNeed>containment of an object in a specific context</searchNeed>
+        <cqlf:searchNeed>containment of an object in a specific context</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Dependency -->
@@ -157,7 +141,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#ExpressivePower -->
@@ -165,7 +148,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#ExpressivePower">
         <rdfs:comment>Abstract root concept</rdfs:comment>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#ExternalResource -->
@@ -187,9 +169,8 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:label>ExternalResource</rdfs:label>
-        <searchNeed>reference to externally encoded structured data</searchNeed>
+        <cqlf:searchNeed>reference to externally encoded structured data</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Frame -->
@@ -197,7 +178,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Frame">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Functionality -->
@@ -205,7 +185,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Functionality">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#FuzzySearch -->
@@ -222,9 +201,8 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:label>FuzzySearch</rdfs:label>
-        <searchNeed>approximate string matching</searchNeed>
+        <cqlf:searchNeed>approximate string matching</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#GraphRelation -->
@@ -233,9 +211,8 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Dependency"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
         <rdfs:label>GraphRelation</rdfs:label>
-        <searchNeed>relationships of objects as nodes linked by directed arcs</searchNeed>
+        <cqlf:searchNeed>relationships of objects as nodes linked by directed arcs</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Hierarchical -->
@@ -244,7 +221,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Level -->
@@ -252,7 +228,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Level">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Metamodel"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Linear -->
@@ -260,7 +235,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Linear">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#LinearRelation -->
@@ -277,9 +251,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>precedence/co-occurrence of objects</rdfs:comment>
         <rdfs:label>LinearRelation</rdfs:label>
-        <searchNeed>horizontal relationships of objects</searchNeed>
+        <cqlf:searchNeed>horizontal relationships of objects</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#MatchingStrategy -->
@@ -302,9 +275,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>match the first object in a sequence, match the whole span between tw objects, greedy vs. non-greedy search</rdfs:comment>
         <rdfs:label>MatchingStrategy</rdfs:label>
-        <searchNeed>define specific matching modality</searchNeed>
+        <cqlf:searchNeed>define specific matching modality</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Metainformation -->
@@ -327,15 +299,13 @@
         </rdfs:subClassOf>
         <rdfs:comment>text genre, publication date, author sex</rdfs:comment>
         <rdfs:label>Metainformation</rdfs:label>
-        <searchNeed>query metainformation associated with the primary data</searchNeed>
+        <cqlf:searchNeed>query metainformation associated with the primary data</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Metamodel -->
 
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Metamodel"/>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Module -->
@@ -343,7 +313,6 @@
     <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Module">
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Metamodel"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Overlapping -->
@@ -352,7 +321,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Concurrent"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Paradigmatic -->
@@ -361,7 +329,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Concurrent"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#PartialMatch -->
@@ -378,9 +345,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>prefix/suffix search, match against regular expression</rdfs:comment>
         <rdfs:label>PartialMatch</rdfs:label>
-        <searchNeed>match plain text or linguistic annotation value against a generalised pattern</searchNeed>
+        <cqlf:searchNeed>match plain text or linguistic annotation value against a generalised pattern</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#PlainText -->
@@ -389,7 +355,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#PlainTextSearch -->
@@ -398,9 +363,8 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#PlainText"/>
         <rdfs:label>PlainTextSearch</rdfs:label>
-        <searchNeed>find segmentation-independent strings</searchNeed>
+        <cqlf:searchNeed>find segmentation-independent strings</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Position -->
@@ -420,9 +384,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>containment at left, distance between two objects</rdfs:comment>
         <rdfs:label>Position</rdfs:label>
-        <searchNeed>relative position of an object with respect to another</searchNeed>
+        <cqlf:searchNeed>relative position of an object with respect to another</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Quantification -->
@@ -445,9 +408,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>at least N, at most M</rdfs:comment>
         <rdfs:label>Quantification</rdfs:label>
-        <searchNeed>numeric range specification on a constraint</searchNeed>
+        <cqlf:searchNeed>numeric range specification on a constraint</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Repetition -->
@@ -463,9 +425,8 @@
             </owl:Class>
         </rdfs:subClassOf>
         <rdfs:label>Repetition</rdfs:label>
-        <searchNeed>multiple occurrence of an object</searchNeed>
+        <cqlf:searchNeed>multiple occurrence of an object</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Segmentation -->
@@ -474,7 +435,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Sensitivity -->
@@ -491,9 +451,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>case-insensitive, ignore diacritics</rdfs:comment>
         <rdfs:label>Sensitivity</rdfs:label>
-        <searchNeed>treatment of special character features</searchNeed>
+        <cqlf:searchNeed>treatment of special character features</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#SimpleAnnotation -->
@@ -502,7 +461,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#Size -->
@@ -521,9 +479,8 @@
         </rdfs:subClassOf>
         <rdfs:comment>string length, number of objects in sequence, arity of tree branch or graph vertex</rdfs:comment>
         <rdfs:label>Size</rdfs:label>
-        <searchNeed>specify the size of an object</searchNeed>
+        <cqlf:searchNeed>specify the size of an object</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#SpanContainment -->
@@ -532,7 +489,6 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#TreeRelation -->
@@ -542,9 +498,8 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
         <rdfs:comment>domination of an object by another, common parent node</rdfs:comment>
         <rdfs:label>TreeRelation</rdfs:label>
-        <searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</searchNeed>
+        <cqlf:searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</cqlf:searchNeed>
     </owl:Class>
-    
 
 
     <!-- https://www.clarin.eu/standards/cqlf#UseCase -->
@@ -553,8 +508,3 @@
         <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
     </owl:Class>
 </rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
-
