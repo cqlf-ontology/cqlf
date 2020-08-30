@@ -1,0 +1,773 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.clarin.eu/standards/cqlf#"
+     xml:base="https://www.clarin.eu/standards/cqlf"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cqlf="https://www.clarin.eu/standards/cqlf#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://www.clarin.eu/standards/cqlf">
+        <rdfs:comment>Example ontology for CQLF-2 (ISO/DIS 24623-2), including non-normative content
+
+ - all illustrative examples from Annex A of ISO/DIS 24623-2
+ - several additional Frames, Use Cases and conformance statements
+ - semi-formal terminological conventions that might be used in the community process
+</rdfs:comment>
+    </owl:Ontology>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#example -->
+
+    <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#example"/>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#parameters -->
+
+    <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#parameters"/>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#searchNeed -->
+
+    <owl:AnnotationProperty rdf:about="https://www.clarin.eu/standards/cqlf#searchNeed"/>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#CQL"/>
+        <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
+        <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <owl:equivalentClass rdf:resource="https://www.clarin.eu/standards/cqlf#UseCase"/>
+    </rdf:Description>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#ANNIS -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#ANNIS">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#CQL"/>
+        <owl:disjointWith rdf:resource="https://www.clarin.eu/standards/cqlf#Repetition"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Annotation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Annotation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>Annotation</rdfs:label>
+        <cqlf:searchNeed>find individual objects based on their linguistic annotation</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#AnnotationPartialMatch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#AnnotationPartialMatch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Annotation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#PartialMatch"/>
+        <rdfs:label>PartialMatch(Annotation)</rdfs:label>
+        <cqlf:searchNeed>object with annotation value partially matched</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#CQL -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#CQL"/>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#CQP -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#CQP">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#CQL"/>
+        <owl:disjointWith rdf:resource="https://www.clarin.eu/standards/cqlf#RootNPDominationRelationAnnotationRegEx"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Complex -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Complex">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Concurrent -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Concurrent">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#ConstraintCombination -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#ConstraintCombination">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>conjunction (&amp;), disjunction ( | ), negation (!, !=), difference (-)</rdfs:comment>
+        <rdfs:label>ConstraintCombination</rdfs:label>
+        <cqlf:searchNeed>Boolean operators for combining constraints on objects</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Containment -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Containment">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>Containment</rdfs:label>
+        <cqlf:searchNeed>containment of an object in a specific context</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Dependency -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Dependency">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#ExpressivePower -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#ExpressivePower">
+        <rdfs:comment>Abstract root concept</rdfs:comment>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#ExternalResource -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#ExternalResource">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>ExternalResource</rdfs:label>
+        <cqlf:searchNeed>reference to externally encoded structured data</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Frame -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Frame">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Functionality -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Functionality">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#FuzzySearch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#FuzzySearch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>FuzzySearch</rdfs:label>
+        <cqlf:searchNeed>approximate string matching</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#GraphRelation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#GraphRelation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Dependency"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:label>GraphRelation</rdfs:label>
+        <cqlf:searchNeed>relationships of objects as nodes linked by directed arcs</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Hierarchical -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#LemmaTokenRepetition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#LemmaTokenRepetition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenAnnotationRepetitionQuantification"/>
+        <rdfs:label>Repeat [ exactly n times ] (Token.lemma)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Level -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Level">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Metamodel"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Linear -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Linear">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Level"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#LinearRelation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#LinearRelation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>precedence/co-occurrence of objects</rdfs:comment>
+        <rdfs:label>LinearRelation</rdfs:label>
+        <cqlf:searchNeed>horizontal relationships of objects</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#LinearRelationPosition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#LinearRelationPosition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#LinearRelation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Position"/>
+        <rdfs:label>Position(LinearRelation)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#LinearRelationQuantifiedPosition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#LinearRelationQuantifiedPosition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#LinearRelationPosition"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#PositionQuantification"/>
+        <rdfs:label>LinearRelation by Quantification(Position)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#MatchingStrategy -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#MatchingStrategy">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>match the first object in a sequence, match the whole span between tw objects, greedy vs. non-greedy search</rdfs:comment>
+        <rdfs:label>MatchingStrategy</rdfs:label>
+        <cqlf:searchNeed>define specific matching modality</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Metainformation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Metainformation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>text genre, publication date, author sex</rdfs:comment>
+        <rdfs:label>Metainformation</rdfs:label>
+        <cqlf:searchNeed>query metainformation associated with the primary data</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Metamodel -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Metamodel"/>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Module -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Module">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Metamodel"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#NodeAnnotation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#NodeAnnotation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Annotation"/>
+        <rdfs:label>Annotation(Node)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#NodeAnnotationTreeRelationAnnotationPartialMatch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#NodeAnnotationTreeRelationAnnotationPartialMatch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#NodeAnnotation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TreeRelationAnnotationPartialMatch"/>
+        <rdfs:label>PartialMatch( TreeRelation( Node.annotation, Node.annotation ) by Annotation )</rdfs:label>
+        <cqlf:searchNeed>tree relation with functional annotation matched by regular expression between two tree nodes with specific annotation values (single attribute=value constraints)</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Overlapping -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Concurrent"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Paradigmatic -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Concurrent"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#PartialMatch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#PartialMatch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>prefix/suffix search, match against regular expression</rdfs:comment>
+        <rdfs:label>PartialMatch</rdfs:label>
+        <cqlf:searchNeed>match plain text or linguistic annotation value against a generalised pattern</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#PlainText -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#PlainText">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#PlainTextSearch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#PlainTextSearch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#PlainText"/>
+        <rdfs:label>PlainTextSearch</rdfs:label>
+        <cqlf:searchNeed>find segmentation-independent strings</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Position -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Position">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>containment at left, distance between two objects</rdfs:comment>
+        <rdfs:label>Position</rdfs:label>
+        <cqlf:searchNeed>relative position of an object with respect to another</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#PositionQuantification -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#PositionQuantification">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Position"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Quantification"/>
+        <rdfs:label>Quantification(Position)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Quantification -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Quantification">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Overlapping"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Paradigmatic"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>at least N, at most M</rdfs:comment>
+        <rdfs:label>Quantification</rdfs:label>
+        <cqlf:searchNeed>numeric range specification on a constraint</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Repetition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Repetition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label>Repetition</rdfs:label>
+        <cqlf:searchNeed>multiple occurrence of an object</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#RepetitionQuantification -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#RepetitionQuantification">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Repetition"/>
+        <rdfs:label>Quantification(Repetition)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#RootNPDominationRelationAnnotationRegEx -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#RootNPDominationRelationAnnotationRegEx">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#NodeAnnotationTreeRelationAnnotationPartialMatch"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#UseCase"/>
+        <rdfs:label>DominationRelation( Node.root, Node.NP ) by RegEx(Annotation)</rdfs:label>
+        <cqlf:searchNeed>find a phrase node of category &quot;ROOT&quot; in a syntactic parse tree and a node of category &quot;NP&quot; such that &quot;ROOT&quot; is the parent of &quot;NP&quot; and the dominance relation is annotated with a function matching the regular expression.</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Segmentation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Sensitivity -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Sensitivity">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Annotation"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>case-insensitive, ignore diacritics</rdfs:comment>
+        <rdfs:label>Sensitivity</rdfs:label>
+        <cqlf:searchNeed>treatment of special character features</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#SimpleAnnotation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#SimpleAnnotation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Linear"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#Size -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#Size">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Dependency"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#PlainText"/>
+                    <rdf:Description rdf:about="https://www.clarin.eu/standards/cqlf#Segmentation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>string length, number of objects in sequence, arity of tree branch or graph vertex</rdfs:comment>
+        <rdfs:label>Size</rdfs:label>
+        <cqlf:searchNeed>specify the size of an object</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#SpanContainment -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#SpanContainment">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Complex"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Module"/>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenAnnotation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenAnnotation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Annotation"/>
+        <rdfs:label>Annotation(Token)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenAnnotationLinearRelationQuantifiedPosition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenAnnotationLinearRelationQuantifiedPosition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenAnnotation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenLinearRelationQuantifiedPosition"/>
+        <rdfs:label>LinearRelation(Token.annotation, Token.annotation) by Quantified(Position)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenAnnotationRepetitionQuantification -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenAnnotationRepetitionQuantification">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenAnnotation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenRepetitionQuantification"/>
+        <rdfs:label>Repetition(Token.annotation) by Quantification</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenLInearRelation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenLInearRelation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#LinearRelation"/>
+        <rdfs:label>LinearRelation(Token, Token)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenLinearRelationQuantifiedPosition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenLinearRelationQuantifiedPosition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#LinearRelationQuantifiedPosition"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenLInearRelation"/>
+        <rdfs:label>LinearRelation(Token, Token) by Quantified(Position)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenPOSTokenPOSPrecedenceQuantifiedExactDistance -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenPOSTokenPOSPrecedenceQuantifiedExactDistance">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenAnnotationLinearRelationQuantifiedPosition"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#UseCase"/>
+        <rdfs:label>Precedence(Token.pos, Token.pos)@distance[ exactly N Tokens]</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenRepetition -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenRepetition">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Repetition"/>
+        <rdfs:label>Repetition(Token)</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TokenRepetitionQuantification -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TokenRepetitionQuantification">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#RepetitionQuantification"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TokenRepetition"/>
+        <rdfs:label>Repetition(Token) by Quantification</rdfs:label>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TreeRelation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TreeRelation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Functionality"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Hierarchical"/>
+        <rdfs:comment>domination of an object by another, common parent node</rdfs:comment>
+        <rdfs:label>TreeRelation</rdfs:label>
+        <cqlf:searchNeed>vertical relationships of objects as nodes linked by hierarchically directed arcs</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TreeRelationAnnotation -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TreeRelationAnnotation">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Annotation"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TreeRelation"/>
+        <rdfs:label>Annotation(TreeRelation)</rdfs:label>
+        <cqlf:searchNeed>tree relation with a specified annotation value</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#TreeRelationAnnotationPartialMatch -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#TreeRelationAnnotationPartialMatch">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#AnnotationPartialMatch"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#Frame"/>
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#TreeRelationAnnotation"/>
+        <rdfs:label>PartialMatch( TreeRelation(Node, Node) by Annotation )</rdfs:label>
+        <cqlf:searchNeed>tree relation with partially matched annotation value</cqlf:searchNeed>
+    </owl:Class>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#UseCase -->
+
+    <owl:Class rdf:about="https://www.clarin.eu/standards/cqlf#UseCase">
+        <rdfs:subClassOf rdf:resource="https://www.clarin.eu/standards/cqlf#ExpressivePower"/>
+    </owl:Class>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#[lemma=&amp;quot;①&amp;quot;](②) -->
+
+    <owl:NamedIndividual rdf:about="https://www.clarin.eu/standards/cqlf#[lemma=&amp;quot;①&amp;quot;](②)">
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#CQP"/>
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#LemmaTokenRepetition"/>
+        <rdfs:label>[lemma=&quot;①&quot;]{②}</rdfs:label>
+        <cqlf:example>[lemma=&quot;have&quot;]{3}
+(https://corpora.linguistik.uni-erlangen.de/cqpweb/ds_potter/concordance.php?theData=%5Blemma%3D%22have%22%5D%7B3%7D&amp;qmode=cqp&amp;pp=50&amp;qstrategy=0&amp;del=begin&amp;t=&amp;del=end)</cqlf:example>
+        <cqlf:parameters>①: string; PCRE-flavoured regular expression
+②: integer</cqlf:parameters>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#[pos=&amp;quot;①&amp;quot;]_[](②)_[pos=&amp;quot;③&amp;quot;] -->
+
+    <owl:NamedIndividual rdf:about="https://www.clarin.eu/standards/cqlf#[pos=&amp;quot;①&amp;quot;]_[](②)_[pos=&amp;quot;③&amp;quot;]">
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#CQP"/>
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#TokenPOSTokenPOSPrecedenceQuantifiedExactDistance"/>
+        <rdfs:label>[pos=&quot;①&quot;] []{②} [pos=&quot;③&quot;]</rdfs:label>
+        <cqlf:example>[pos=&quot;NNS&quot;] []{3} [pos=&quot;NNS&quot;]
+(https://corpora.linguistik.uni-erlangen.de/cqpweb/ds_potter/concordance.php?theData=%5Bpos%3D%22NNS%22%5D+%5B%5D%7B3%7D+%5Bpos%3D%22NNS%22%5D&amp;qmode=cqp&amp;pp=50&amp;qstrategy=0&amp;del=begin&amp;t=&amp;del=end)</cqlf:example>
+        <cqlf:parameters>①,③ : string; PCRE-flavoured regular expression
+②: integer</cqlf:parameters>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#cat=‎&amp;quot;ROOT‎&amp;quot;_&amp;gt;[func=‎/①/]_cat=‎&amp;quot;NP‎&amp;quot; -->
+
+    <owl:NamedIndividual rdf:about="https://www.clarin.eu/standards/cqlf#cat=‎&amp;quot;ROOT‎&amp;quot;_&amp;gt;[func=‎/①/]_cat=‎&amp;quot;NP‎&amp;quot;">
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#ANNIS"/>
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#RootNPDominationRelationAnnotationRegEx"/>
+        <rdfs:label>cat=‎&quot;ROOT‎&quot; &gt;[func=‎/①/] cat=‎&quot;NP‎&quot;</rdfs:label>
+        <cqlf:example>cat=‎&quot;ROOT‎&quot; &gt;[func=‎/.*/] cat=‎&quot;NP‎&quot;
+(https://korpling.german.hu-berlin.de/annis3/#_q=Y2F0PSJST09UIiA-W2Z1bmM9Ly4qL10gY2F0PSJOUCI&amp;_c=R1VN&amp;cl=5&amp;cr=5&amp;s=0&amp;l=10)</cqlf:example>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.clarin.eu/standards/cqlf#pos=‎&amp;quot;①&amp;quot;_.②_pos=‎&amp;quot;③&amp;quot; -->
+
+    <owl:NamedIndividual rdf:about="https://www.clarin.eu/standards/cqlf#pos=‎&amp;quot;①&amp;quot;_.②_pos=‎&amp;quot;③&amp;quot;">
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#ANNIS"/>
+        <rdf:type rdf:resource="https://www.clarin.eu/standards/cqlf#TokenPOSTokenPOSPrecedenceQuantifiedExactDistance"/>
+        <rdfs:label>pos=‎&quot;①&quot; .② pos=‎&quot;③&quot;</rdfs:label>
+        <cqlf:example>pos=‎&quot;NNS‎&quot; .4 pos=‎&quot;NNS‎&quot;
+(https://korpling.german.hu-berlin.de/annis3/#_q=cG9zPSJOTlMiIC40IHBvcz0iTk5TIg&amp;_c=R1VN&amp;cl=5&amp;cr=5&amp;s=0&amp;l=10)</cqlf:example>
+        <cqlf:parameters>①,③: string
+②: integer</cqlf:parameters>
+    </owl:NamedIndividual>
+</rdf:RDF>
