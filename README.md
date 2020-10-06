@@ -9,6 +9,8 @@ The repository contains the following files:
  - `CQLF-2.owl` is the master version of the community ontology. An initial ontology is currently in development and will be used to seed the community process later on.
  - `templates/CQLF-2.owl` is an RDF/XML serialisation of the normative part of ISO/DIS 24623-2:2020.
  - `examples/CQLF-2.owl` is a small illustrative example ontology, including the examples described in Annex A of the draft international standard.
+ 
+ The ontology uses the following namespace identifier: `https://www.clarin.eu/standards/cqlf`. We are grateful to the CLARIN project for this contribution.
 
 For further information about CQLF-2, please consult the LREC 2020 paper:
 
